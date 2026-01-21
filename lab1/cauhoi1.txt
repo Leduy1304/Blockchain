@@ -1,0 +1,31 @@
+Câu 1: SHA-256 Hash có độ dài bao nhiêu ký tự? Giải thích vì sao?
+SHA-256 có 64 ký tự. Bởi vì 1 ký tự hex đại diện cho 4 bit.
+VD: Bạn băm từ "Hello": kết quả là một chuỗi 64 ký tự
+
+Câu 2: Tại sao thay đổi chỉ 1 ký tự trong dữ liệu gốc, mà Hash lại thay đổi hoàn toàn?
+Hiện tượng này gọi là hiệu ứng thác đổ (Avalanche Effect),
+khiến mã băm thay đổi hoàn toàn dù chỉ một chi tiết nhỏ bị biến đổi nhằm phát hiện gian lận và bảo vệ tính toàn vẹn của dữ liệu
+
+Câu 3: Nêu 3 tính chất của SHA-256 mà bạn đã quan sát được từ PHẦN 1 & 2.
+Sau đây là 3 tính chất quan trọng của SHA-256:
+
+Tính một chiều (One-way): Thuật toán cho phép dễ dàng tính toán mã băm từ dữ liệu gốc,
+nhưng không thể suy ngược lại từ mã băm để biết dữ liệu gốc là gì.
+Sức mạnh của con số 256-bit lớn đến mức nếu dùng toàn bộ máy tính mạnh nhất thế giới hiện nay để “đoán mò” dữ liệu gốc,
+chúng ta sẽ mất hàng tỷ năm mới có cơ hội thành công.
+
+Tính duy nhất (Deterministic): Một đầu vào cụ thể sẽ luôn luôn cho ra cùng một mã băm duy nhất.
+Đồng thời, mã băm này có độ dài cố định là 64 ký tự hệ thập lục phân, bất kể dữ liệu đầu vào là một từ ngắn hay một cuốn sách dày 500 trang.
+
+Hiệu ứng thác đổ (Avalanche Effect): Chỉ cần một thay đổi cực kỳ nhỏ ở đầu vào (ví dụ: đổi chữ "A" thành "a" hoặc thêm một dấu cách),
+mã băm kết quả sẽ thay đổi hoàn toàn. Đặc tính này giúp mạng lưới Blockchain dễ dàng phát hiện các hành vi gian lận dữ liệu.
+
+Câu 4: Chữ ký số có tác dụng gì trong blockchain?
+Chữ ký số trong blockchain dùng để xác thực người tạo giao dịch,
+đảm bảo tính toàn vẹn dữ liệu và chống chối bỏ giao dịch, giúp blockchain hoạt động an toàn và phi tập trung.
+
+
+Câu 5: Tại sao Private Key không được chia sẻ? Nếu Private Key bị lộ sẽ như thế nào?
+Private Key không được chia sẻ vì nó dùng để ký số và xác thực quyền sở hữu. Nếu Private Key bị lộ,
+kẻ khác có thể giả mạo người dùng, ký giao dịch hợp lệ và chiếm toàn bộ tài sản mà không thể khôi phục.
+
